@@ -2,6 +2,6 @@ class Calculator
   def add(numbers)
     return 0 if numbers.empty? #returns 0 for an empty string
 
-    # numbers.split(',').map(&:to_i).sum
+    numbers.split(',').map(&:to_i).sum  #sum of two numbers
   end
 end
