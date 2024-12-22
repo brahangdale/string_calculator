@@ -16,5 +16,10 @@ RSpec.describe Calculator, type: :service do
       calculator = Calculator.new
       expect(calculator.add('1,5')).to eq(6)
     end
+
+    it 'handles numbers separated by new lines' do
+      calculator = Calculator.new
+      expect(calculator.add("1\n2,3")).to eq(6)
+    end
   end
 end
