@@ -9,8 +9,11 @@ class Calculator
       numbers = numbers.gsub(delimiter, ",")
     end
 
+    # validate Negative number
+    negative_numbers = numbers.split(',').map(&:to_i).select { |num| num < 0 }
+    raise "Negative numbers not allowed: #{negative_numbers.join(', ')}" unless negative_numbers.empty?
+    
     numbers = numbers.gsub("\n", ",")  # Replace new lines with commas
-
 
     numbers.split(',').map(&:to_i).sum  #sum of two numbers
   end
